@@ -27,7 +27,9 @@ module.exports = function (app) {
       if (errors.invalidNum || errors.invalidUnit) {
         throw errors;
       }
-      const returnNum = convertHandler.convert(initNum, initUnit).toFixed(5);
+      const returnNum = parseFloat(
+        convertHandler.convert(initNum, initUnit).toFixed(5)
+      );
       const returnUnit = convertHandler.getReturnUnit(initUnit);
       const string = convertHandler.getString(
         initNum,

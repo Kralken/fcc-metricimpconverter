@@ -15,7 +15,7 @@ function ConvertHandler() {
     if (isNaN(numerator) || isNaN(denominator)) {
       throw new Error("not a number");
     }
-    return numerator / denominator;
+    return parse(numerator / denominator).toFixed(2);
   };
 
   this.getUnit = function (input) {
